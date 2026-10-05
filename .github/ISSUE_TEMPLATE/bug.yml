@@ -1,0 +1,50 @@
+name: Bug
+description: Something in JOS Compositor doesn't work as it should
+labels: ["bug"]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: What you saw. Drag screenshots or a short screen recording in here.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What should happen
+      description: What you expected, or what Nuke does.
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps
+      description: How to make it happen again. Attach the .jos project (zipped) if it helps; this tracker is public, so nothing confidential.
+      placeholder: |
+        1. Read a 4K EXR
+        2. Add a Blur, size 100
+        3. Drag the size slider
+  - type: input
+    id: node
+    attributes:
+      label: Node(s)
+      description: The node types involved, if any (e.g. Grade, Transform).
+  - type: dropdown
+    id: severity
+    attributes:
+      label: How bad
+      options:
+        - Crash, hang or lost work
+        - Wrong picture
+        - Something doesn't work, there's a way around it
+        - Annoying or cosmetic
+  - type: input
+    id: version
+    attributes:
+      label: Build
+      description: Commit or package the app was built from (the CI run number, or "local").
+  - type: textarea
+    id: system
+    attributes:
+      label: System
+      description: Filled in by Help > Report a Bug (version, OS, CPU, graphics card).
+      render: text
